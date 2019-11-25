@@ -1,2 +1,2 @@
 # Spring Kotlin Vue Sample
-雛形プロジェクト
+This repository is rewrite of https://github.com/kbastani/spring-cloud-event-sourcing-example to using Kotlin and Vue

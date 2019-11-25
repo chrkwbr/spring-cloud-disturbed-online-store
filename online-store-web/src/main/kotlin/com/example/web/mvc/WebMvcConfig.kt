@@ -1,4 +1,4 @@
-package com.example.presentation.mvc
+package com.example.web.mvc
 
 import org.springframework.context.MessageSource
 import org.springframework.context.annotation.Bean
@@ -9,11 +9,9 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean
 import org.springframework.web.servlet.config.annotation.EnableWebMvc
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 
-
 @Configuration
 @EnableWebMvc
 class WebMvcConfig : WebMvcConfigurer {
-
     @Bean
     override fun getValidator(): Validator {
         val bean = LocalValidatorFactoryBean()
