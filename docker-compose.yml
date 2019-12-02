@@ -1,0 +1,7 @@
+config-service:
+  image: chrkwbr/config-service
+  environment:
+    - SPRING_PROFILES_ACTIVE=docker
+    - DOCKER_IP=$DOCKER_IP
+  ports:
+    - 8888:8888
