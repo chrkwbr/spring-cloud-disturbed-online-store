@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: development
+zuul:
+  ignored-services: '*'
+  ignored-patterns: /**/api/*e
+  routes:
+    account-service: /account/**
+#    TODO 各サービスの定義
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost/uaa/user #TODO
+  ignored: /catalog/**
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      default-zone: http://localhost:8761/eureka/ #TODO
+      

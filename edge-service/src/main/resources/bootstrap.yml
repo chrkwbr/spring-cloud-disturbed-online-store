@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: edge-service
+server:
+  port: 9999
+---
+spring:
+  profiles: docker
+  cloud:
+    config:
+      uri: http://config-service:8888
