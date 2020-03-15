@@ -1,0 +1,19 @@
+spring:
+  profiles: development
+---
+server:
+  port: 8181
+  servlet:
+    context-path: /uaa
+spring:
+  security:
+    user:
+      password: password
+    enable-csrf: false # TODO 移行？？
+  datasource:
+    url: jdbc:mysql://192.168.99.100:3306/dev
+    username: root
+    password: dbpass
+    initialize: true #TODO deprecated
+security:
+  ignored: /resources/** # TODO deprecated
