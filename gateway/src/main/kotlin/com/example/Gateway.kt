@@ -5,16 +5,12 @@ import com.example.security.SecurityConfig
 import io.micrometer.core.instrument.config.MeterFilter
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.builder.SpringApplicationBuilder
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient
-import org.springframework.cloud.netflix.hystrix.EnableHystrix
 import org.springframework.context.ApplicationContextInitializer
 import org.springframework.context.support.GenericApplicationContext
 import org.springframework.context.support.beans
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer
 
 @EnableResourceServer
-@EnableHystrix // TODO use resilience4j
-@EnableEurekaClient
 @SpringBootApplication
 class Gateway
 
