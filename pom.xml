@@ -4,6 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.3.4.RELEASE</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+  
   <groupId>com.example</groupId>
   <artifactId>spring-kotlin-vue-sample</artifactId>
   <packaging>pom</packaging>
@@ -12,16 +19,51 @@
     <module>online-store-web</module>
     <module>config-service</module>
     <module>discovery-service</module>
-    <module>edge-service</module>
+    <module>gateway</module>
     <module>user-service</module>
   </modules>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <java.version>11</java.version>
+    <kotlin.version>1.4.10</kotlin.version>
+    <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
+
+    <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+
+    <mybatis-spring-boot.version>2.1.1</mybatis-spring-boot.version>
+    <zipkin.brave.instrumentation>5.9.0</zipkin.brave.instrumentation>
+    <micrometer.prometheus>0.9.0</micrometer.prometheus>
+    <r2dbc.postgresql.version>0.8.3.RELEASE</r2dbc.postgresql.version>
+
     <docker.image.prefix>chrkwbr</docker.image.prefix>
     <docker.plugin.version>1.0.0</docker.plugin.version>
   </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>io.zipkin.brave</groupId>
+        <artifactId>brave-instrumentation-mysql8</artifactId>
+        <version>${zipkin.brave.instrumentation}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.micrometer.prometheus</groupId>
+        <artifactId>prometheus-rsocket-spring</artifactId>
+        <version>${micrometer.prometheus}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <repositories>
     <repository>
