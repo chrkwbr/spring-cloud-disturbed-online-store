@@ -1,4 +1,4 @@
-package com.example.controller.v1.user
+package com.example.api.v1.user
 
 import com.example.handler.UserHandlerV1
 import com.example.model.user.User

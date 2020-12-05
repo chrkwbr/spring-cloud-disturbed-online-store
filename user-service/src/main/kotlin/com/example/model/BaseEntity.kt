@@ -4,7 +4,6 @@ import org.springframework.data.annotation.*
 import org.springframework.data.relational.core.mapping.Column
 import java.time.LocalDateTime
 
-
 open class BaseEntity {
     @Column("created_at")
     @CreatedDate
