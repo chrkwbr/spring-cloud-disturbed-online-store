@@ -9,9 +9,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>discovery-service</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <artifactId>edge-service</artifactId>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,7 +17,7 @@
     <java.version>1.8</java.version>
     <kotlin.version>1.3.50</kotlin.version>
     <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
-    <main.class>com.example.DiscoveryApplicationKt</main.class>
+    <main.class>com.example.EdgeApplicationKt</main.class>
 
     <spring-boot.version>2.2.1.RELEASE</spring-boot.version>
     <spring-cloud.version>Hoxton.RC2</spring-cloud.version>
@@ -64,8 +62,21 @@
     </dependency>
     <dependency>
       <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+      <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-oauth2</artifactId>
+    </dependency>
+
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
